@@ -1,0 +1,73 @@
+/*The width of block boxes is set automatically based on the
+width of its parent container. In this case, our blocks
+are always the width of the browser window.
+
+The default height of block boxes is based on the content
+it contains. When you narrow the browser window, the <h1>
+gets split over two lines, and its height adjusts accordingly.
+*/
+
+/*it won’t affect the vertical layout of the surrounding boxes.*/
+
+* {
+  margin: 10px;
+  padding: 0;
+  box-sizing: border-box;
+  /* is “universal” CSS selector
+  Resests browser defaults.
+  applies for every html element*/
+}
+h1, p {
+  background-color: #A9A9A9;    /* Light gray */
+  border: 1px solid #5D6063; /* border: size style color*/
+}
+
+em, strong {
+  background-color: #B2D6FF;    /* Light blue */
+  display: inline; /*default value*/
+  /*
+  display: block;
+  if we wanted to make our <em> and <strong>
+  elements blocks instead of inline elements
+  */
+}
+
+strong {
+  margin: 50px;
+}
+
+p {
+  padding: 20px;
+  /*
+  1 value : all sides equally
+  2 value : top-bottom right-left
+  3 value : top right-left bottom
+  4 value : clockwise top right bottom left
+  */
+
+  margin-bottom: 50px;
+}
+/*
+The padding of a box has a background, while margins are always transparent.
+Padding is included in the click area of an element, while margins aren’t.
+Margins collapse vertically, while padding doesn’t */
+div {
+  color: #FFF;
+  background-color: #5995DA;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid #5D6063;
+  border-radius: 5px;
+
+  width: 200px; /*related to box size*/
+  box-sizing: border-box; /*content-box by default*/
+  /* border-box includes padding and border */
+  margin: 20px auto;
+  /*When you set the left and right margin of a block-level element to auto,
+  it will center the block in its parent element.
+  only works on blocks that have an explicit width defined on them.
+  remove width --> auto meaningless. no center alignment*/
+}
+/* div -> block level
+span -> inline level */

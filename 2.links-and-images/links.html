@@ -1,0 +1,42 @@
+<!--
+  an element adds meaning to the content it contains,
+  an HTML “attribute” adds meaning to the element it’s attached to.
+-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Links</title>
+  </head>
+  <body>
+    <h1>Links</h1>
+    <p>This example is about links and <a href='images.html'>images</a>.</p>
+    <p>This particular page is about links! There are three kinds of links:</p>
+    <ul>
+      <li>Root-RELATIVE</li>
+      <li>RELATIVE</li>
+      <li>ABSOLUTE</li>
+    </ul>
+
+    <ol>
+      <li>Absolute links, like to
+        <a href='https://developer.mozilla.org/en-US/docs/Web/HTML'
+        target="_blank">
+        Mozilla Developer Network</a>,
+        which is a very good resource for web developers.
+      </li>
+      <li>
+        Relative links, like to our <a href='misc/extras.html'> extras
+        page</a>.
+      </li>
+
+      <!-- This won't work for our local HTML files -->
+      <li>Root-relative links, like to the <a href='/'>home page</a> of our website,
+        but those aren't useful to us right now.
+      <em>This won't work for our local HTML files.</em></li>
+
+
+    </ol>
+    <p></p>
+  </body>
+</html>

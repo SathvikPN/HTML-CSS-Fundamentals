@@ -1,0 +1,113 @@
+/*class selectors to differentiate our <div> and other html elements*/
+
+.synopsis {
+  color: #7E8184;        /* Light gray */
+  font-style: italic;
+}
+
+.synopsis em { /* descendant selector*/
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.button {
+  display: block;             /* Add this */
+  text-decoration: none;
+
+  color: #FFF;
+  background-color: #5995DA;    /* Blue */
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid #5D6063;    /* Dark gray */
+  border-radius: 5px;
+
+  width: 200px;
+  margin: 20px auto;
+}
+
+.button : hover {
+  color: green;
+}
+
+.page {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.call-to-action {
+  font-style: italic;
+  background-color: #EEB75A;    /* Yellow */
+}
+
+/* At any given time, an <a href> element can be in a
+number of different states, and you can use pseudo-classes
+to style each one of them individually.
+:link – A link the user has never visited.
+:visited – A link the user has visited before.
+:hover – A link with the user’s mouse over it.
+:active – A link that’s being pressed down by a mouse (or finger).*/
+
+a:link {
+  color: blue;
+  text-decoration: none;
+}
+a:visited {
+  color: purple;
+}
+a:hover {
+  color: aqua;
+  text-decoration: underline;
+}
+a:active {
+  color: red;
+}
+
+.call-to-action:link,
+.call-to-action:visited {
+  font-style: italic;
+  background-color: #EEB75A;     /* Yellow */
+}
+
+.call-to-action:hover,
+.call-to-action:visited:hover {
+  background-color: #F5CF8E;     /* Light yellow */
+}
+
+.call-to-action:active,
+.call-to-action:visited:active {
+  background-color: #EEB75A;     /* Yellow */
+}
+
+p:last-of-type {
+  margin-bottom: 50px;
+}
+/*the :last-of-type pseudo-class selects the final element
+of a particular type in its parent element. This gives us an
+alternative to class selectors for selecting specific elements.*/
+p:first-of-type {
+  color: #7E8184;
+  font-style: italic;
+}
+
+/*That is to say, p:first-of-type selects the first <p>
+in every container element.
+
+We have a single generic <div> wrapping our content (.page),
+so this isn’t a problem for us. But problematic if we have
+another container sidebar.
+So add .page > p: last-of-type for particualar container  */
+
+#button-1 {
+  color: #5D6063;  /* Dark gray */
+}
+/* you can only have one element with the same ID per page,
+which means you can’t reuse styles at all
+
+id attributes need to be unique because they serve as the
+target for “URL fragments”
+
+create a dependency between your
+website’s URLs and your CSS styles.
+every time change, you have to take care changing both
+else, website breaks. */
