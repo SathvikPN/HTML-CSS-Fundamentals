@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .menu-container {
+    color: #fff;
+    background-color: #5995DA;  /* Blue */
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    /*This has the same effect as adding a 
+    margin: 0 auto declaration to the .menu element. */
+  }
+  
+  .menu {
+    border: 1px solid #fff;
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .links {
+    /*border: 1px solid #fff;*/  /* For debugging */
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .login {
+    margin-left: 20px;
+  }
+
+  .signup {
+    margin-left: auto;
+  }
+
+  .header-container {
+    color: #5995DA;
+    background-color: #D6E9FE;
+    display: flex;
+    justify-content: center;
+  }
+  .header {
+    width: 900px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*align-items: stretch; use with borders defined for items*/
+  }
+/*
+.social,
+.logo,
+.subscribe {
+  border: 1px solid #5995DA;
+} */
+
+.photo-grid-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .photo-grid {
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+  }
+  .photo-grid-item {
+    border: 1px solid #fff;
+    width: 300px;
+    height: 300px;
+  }
+  .first-item {
+    order: 1;
+  }
+  
+  .last-item {
+    order: -1;
+  }
+
+  .social,
+.subscribe {
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer-item {
+    border: 1px solid #fff;
+    background-color: #D6E9FE;
+    height: 200px;
+    flex: 1;
+  }
+
+  .footer-three {
+    flex: 2;
+    /* justify-content property, which distributes extra space between items. 
+    This is similar, but now we’re distributing that space 
+    INTO the items themselves.*/
+  }
+
+  .footer-one,
+.footer-three {
+  background-color: #5995DA;
+  flex: initial;
+  width: 300px;
+}
+/*Without that flex: initial; line, the flex: 1; declaration would be 
+inherited from the .footer-item rule, causing the width properties 
+to be ignored. initial fixes this, and we get a flexible layout that 
+also contains fixed-width items. When you resize the browser window, 
+you’ll see that only the middle box in the footer gets resized.*/
+
+/*Use display: flex; to create a flex container.
+Use justify-content to define the horizontal alignment of items.
+Use align-items to define the vertical alignment of items.
+Use flex-direction if you need columns instead of rows.
+Use the row-reverse or column-reverse values to flip item order.
+Use order to customize the order of individual elements.
+Use align-self to vertically align individual items.
+Use flex to create flexible boxes that can stretch and shrink.*/
