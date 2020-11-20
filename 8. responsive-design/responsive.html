@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'/>
+        <!--
+            disabling the default viewport zoom behavior of mobile browsers.
+        -->
+        <meta name='viewport'
+            content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+        <title>Responsive Design</title>
+        <link rel='stylesheet' href='styles.css'/>
+    </head>
+  <body>
+    <!-- There's nothing here! -->
+    <div class='page'>
+        <div class='section menu'></div>
+        <div class='section header'>
+            <div class='photo'>
+                <picture>
+                    <source media='(min-width: 401px)'
+                        srcset='images/photo-big.jpg'/>
+                    <source media='(max-width: 400px)'
+                        srcset='images/photo-tall.jpg'/>
+                    <img src='images/photo-small.jpg'/>
+                </picture>
+            </div>
+        </div>
+<!--
+    In each <source> element, the media attribute defines when the image should be loaded, 
+        and srcset defines which image file should be loaded. The <img/> element is only used 
+        as a fallback for older browsers.
+-->
+
+        <div class='section content'>
+            <div class='illustration'>
+                <img src='illustration-small.png'
+                     srcset='images/illustration-small.png 1x,
+                             images/illustration-big.png 2x'
+                     style='max-width: 500px'/>
+            </div>
+            <!--
+                The 1x tells the browser to display illustration-small.png on standard-resolution screens. 
+                The 2x means that illustration-big.png is for retina screens.
+            -->
+        </div>
+        <!--
+            This is one of the rare times an inline style is acceptable, due to the fact that 
+            it’s describing an innate property of the image. An image’s physical dimensions 
+            are more content than presentation, so it makes sense for this to appear 
+            in the HTML rather than the stylesheet.
+        -->
+        <div class='section sign-up'>
+          <img src='images/sign-up.svg'/>
+        </div>
+        <div class='section feature-1'>
+          <img src='images/feature.svg'/>
+        </div>
+        <div class='section feature-2'>
+          <img src='images/feature.svg'/>
+        </div>
+        <div class='section feature-3'>
+          <img src='images/feature.svg'/>
+        </div>
+      </div>
+  </body>
+</html>
+
+<!--
+    Our recommendation is to stick to the 1x and 2x version of srcset for images less than 600 pixels wide, 
+    use the srcset plus sizes method from the previous section for bigger photos, and 
+    reserve <picture> for when you’re trying to do something real fancy with your designer.
+-->
+
+<!--
+    Summary:-
+    Make images fit into mobile layouts while respecting their intrinsic size
+Avoid making the user download unnecessarily large image files
+We accomplished the former by making images always stretch to fill 100% of their 
+container while limiting their size with an inline max-width style. For the latter, 
+we used srcset to optimize for screen resolution, srcset plus sizes to optimize for 
+device width, and finally the <picture> element for manual control over which image file is displayed.
+-->
